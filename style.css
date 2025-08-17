@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.app {
+  width: 380px;
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.search {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.search input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.search button {
+  padding: 10px 12px;
+  border: none;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.weather-icon {
+  width: 100px;
+  margin: 10px auto;
+}
+
+.temp {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.details, .extra {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+.error {
+  color: #ffbaba;
+  margin-top: 15px;
+}
