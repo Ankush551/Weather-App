@@ -11,20 +11,14 @@ async function getWeather() {
 function getLocationWeather() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        console.log("Location detected:", lat, lon);
-
-        fetchWeatherData(null, lat, lon);
+      pos => {
+        const { latitude, longitude } = pos.coords;
+        fetchWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`);
       },
-      (error) => {
-        console.error(error);
-        alert("❌ Location access denied. Please allow location services.");
-      }
+      () => showError("Location access denied.")
     );
   } else {
-    alert("Geolocation is not supported by this browser.");
+    showError("Geolocation not supported.");
   }
 }
 
@@ -70,3 +64,4 @@ function showError(msg) {
   document.getElementById("error").textContent = msg;
   document.getElementById("weatherBox").style.display = "none";
 }
+
